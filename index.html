@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Shafee ✨ | A Special Celebration</title>
+    <meta name="description" content="A magical and heartfelt birthday celebration dedicated to Shafee.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="index.css?v=8">
+</head>
+
+<body>
+    <!-- Ambient Particle Canvas for Floating Sparkles & Petals -->
+    <canvas id="ambientCanvas"></canvas>
+
+    <!-- Floating Audio Control Player (Page 1 Exclusive) -->
+    <div class="music-player-container" id="musicPlayer">
+        <button class="music-toggle-btn" id="musicToggleBtn" aria-label="Toggle Birthday Song"
+            title="Play / Pause Birthday Song">
+            <div class="vinyl-disc" id="vinylDisc">
+                <span class="disc-center"></span>
+                <span class="disc-groove"></span>
+            </div>
+            <div class="equalizer" id="equalizer">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <span class="bar bar-4"></span>
+            </div>
+            <span class="music-status-text" id="musicStatusText">Tap to Play Song 🎵</span>
+        </button>
+    </div>
+
+    <!-- Permanent Audio element for Page 1 playback: Remo Song Only -->
+    <audio id="bgAudio" loop preload="auto" src="assert/remo.mpeg">
+        <source src="assert/remo.mpeg" type="audio/mpeg">
+    </audio>
+
+    <!-- Dedicated Audio element for Page 2 File Cards -->
+    <audio id="cardAudio" loop preload="auto"></audio>
+    <input type="file" id="cardAudioFileInput" accept="audio/*" style="display: none;">
+
+    <!-- Main Page Wrapper -->
+    <main class="page-wrapper" id="page1Wrapper">
+        <div class="glass-card main-card">
+
+            <!-- Top Celebratory Badge -->
+            <div class="celebration-pill">
+                <span class="sparkle-icon">✨</span>
+                <span class="pill-text">A Special Day For Someone Extraordinary</span>
+                <span class="sparkle-icon">✨</span>
+            </div>
+
+            <!-- The Hero Photo Frame with Fairy Lights -->
+            <div class="frame-showcase-container">
+                <div class="fairy-lights-string" aria-hidden="true">
+                    <span class="bulb b1"></span>
+                    <span class="bulb b2"></span>
+                    <span class="bulb b3"></span>
+                    <span class="bulb b4"></span>
+                    <span class="bulb b5"></span>
+                    <span class="bulb b6"></span>
+                    <span class="bulb b7"></span>
+                    <span class="bulb b8"></span>
+                </div>
+
+                <div class="photo-frame-wrapper" id="photoFrameWrapper">
+                    <div class="frame-outer-glow"></div>
+                    <div class="royal-frame" id="royalFrame">
+                        <div class="frame-corner top-left"></div>
+                        <div class="frame-corner top-right"></div>
+                        <div class="frame-corner bottom-left"></div>
+                        <div class="frame-corner bottom-right"></div>
+
+                        <div class="photo-container" id="photoContainer" title="Shafee's Photo">
+                            <img id="herPhoto" src="assert/WhatsApp Image 2026-10-05 at 20.09.51.jpeg"
+                                alt="Shafee - Birthday Celebration" loading="eager">
+                            <div class="photo-overlay-shimmer"></div>
+
+                            <!-- Interactive Photo Upload Button -->
+                            <label for="photoUploadInput" class="change-photo-badge"
+                                title="Click to use your own photo of Shafee">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+                                    </path>
+                                    <circle cx="12" cy="13" r="4"></circle>
+                                </svg>
+                                <span>Change Photo</span>
+                            </label>
+                            <input type="file" id="photoUploadInput" accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Delicate Badges -->
+                <div class="floating-badge badge-left">
+                    <span>🌸 Gorgeous Smile</span>
+                </div>
+                <div class="floating-badge badge-right">
+                    <span>👑 Birthday Queen</span>
+                </div>
+            </div>
+
+            <!-- Content Area: Slogan & Birthday Greetings -->
+            <section class="content-section">
+                <h1 class="main-title">
+                    <span class="sub-greeting">Celebrating the Incredible</span>
+                    <span class="name-highlight">Shafee</span>
+                </h1>
+
+                <div class="slogan-box">
+                    <p class="slogan-text">
+                        "May your day sparkle with joy, your year be wrapped in warm blessings, and your smile remain as
+                        boundless and radiant as always."
+                    </p>
+                    <p class="slogan-subtext">
+                        To the one who brings light and warmth to every room she enters — Happy Birthday! ✨
+                    </p>
+                </div>
+
+                <!-- Interactive Move Forward Button -->
+                <div class="action-container">
+                    <button class="btn-proceed" id="btnNextPage" aria-label="Move forward in website">
+                        <span class="btn-glow-layer"></span>
+                        <span class="btn-icon">🎁</span>
+                        <span class="btn-label">Unwrap The Celebration</span>
+                        <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                    <p class="tap-hint">Click anywhere to enjoy the magical melody 🎵</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- PAGE 2: THE GIFT BOX & 3 FILE-LIKE CARDS   -->
+    <!-- ========================================== -->
+    <main class="page-wrapper page-hidden" id="page2Wrapper">
+        <div class="glass-card main-card gift-page-card">
+
+            <!-- Navigation Header -->
+            <div class="page2-header">
+                <button class="btn-back" id="btnBackToPage1" title="Go back to Page 1">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    <span>Back to Wishes</span>
+                </button>
+                <div class="celebration-pill page2-pill">
+                    <span class="sparkle-icon">🎀</span>
+                    <span class="pill-text">A Special Birthday Surprise</span>
+                    <span class="sparkle-icon">🎀</span>
+                </div>
+            </div>
+
+            <!-- Page 2 Title & Instruction -->
+            <div class="page2-title-area">
+                <h2 class="page2-main-title">Unwrap Shafee's Gift Box</h2>
+                <p class="page2-subtitle" id="boxStatusInstruction">
+                    <span class="pulse-sparkle">✨</span> Tap the golden ribbon on the box to unwrap your surprise <span
+                        class="pulse-sparkle">✨</span>
+                </p>
+            </div>
+
+            <!-- The Interactive Gift Box Stage -->
+            <div class="gift-stage" id="giftStage">
+
+                <div class="gift-box-wrapper" id="giftBoxWrapper">
+
+                    <!-- 3 File-Like Gift Cards (Peek Animation from inside the box) -->
+                    <div class="inside-cards-container" id="insideCardsContainer">
+
+                        <!-- File Card 1: Her Sweet Smile -->
+                        <div class="gift-file-card card-file-1" id="fileCard1" data-card="1"
+                            title="Click to view File #01">
+                            <div class="file-tab">
+                                <span class="tab-icon">🌸</span>
+                                <span class="tab-label">File #01</span>
+                            </div>
+                            <div class="file-card-preview">
+                                <div class="card-polaroid-preview">
+                                    <img src="assert/WhatsApp Image 2026-10-05 at 20.11.25 (1).jpeg"
+                                        alt="Shafee photo preview">
+                                </div>
+                                <h4 class="card-preview-title">Her Sweet Smile 🌸</h4>
+                                <p class="card-preview-snippet">"A smile that turns simple moments into pure magic."</p>
+                                <span class="card-peek-badge">Read Slogan ✨</span>
+                            </div>
+                        </div>
+
+                        <!-- File Card 2: From The Heart -->
+                        <div class="gift-file-card card-file-2" id="fileCard2" data-card="2"
+                            title="Click to view File #02">
+                            <div class="file-tab">
+                                <span class="tab-icon">💌</span>
+                                <span class="tab-label">File #02</span>
+                            </div>
+                            <div class="file-card-preview">
+                                <div class="wax-seal-icon">💌</div>
+                                <h4 class="card-preview-title">From The Heart 💖</h4>
+                                <p class="card-preview-snippet">"To a soul as pure and lovely as a blossom in spring."
+                                </p>
+                                <span class="card-peek-badge">Read Letter ✨</span>
+                            </div>
+                        </div>
+
+                        <!-- File Card 3: Golden Wishes -->
+                        <div class="gift-file-card card-file-3" id="fileCard3" data-card="3"
+                            title="Click to view File #03">
+                            <div class="file-tab">
+                                <span class="tab-icon">🌟</span>
+                                <span class="tab-label">File #03</span>
+                            </div>
+                            <div class="file-card-preview">
+                                <div class="golden-sparkle-icon">🎂</div>
+                                <h4 class="card-preview-title">Golden Wishes 🌟</h4>
+                                <p class="card-preview-snippet">"Wishing you 365 days of love, laughter, and light."</p>
+                                <span class="card-peek-badge">See Wishes ✨</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- The Gift Box Visuals -->
+                    <div class="gift-box" id="giftBox">
+                        <!-- Box Lid -->
+                        <div class="box-lid" id="boxLid">
+                            <!-- Horizontal Ribbon on Lid -->
+                            <div class="lid-ribbon-horizontal"></div>
+
+                            <!-- Clickable Ribbon Bow on Top -->
+                            <div class="ribbon-bow-clickable" id="ribbonBow" role="button" tabindex="0"
+                                aria-label="Click to unwrap the gift box" title="Click on the ribbon to unwrap!">
+                                <div class="bow-tag">
+                                    <span>🎀 Click Ribbon!</span>
+                                </div>
+                                <div class="bow-center-knot"></div>
+                                <div class="bow-loop bow-loop-left"></div>
+                                <div class="bow-loop bow-loop-right"></div>
+                                <div class="bow-tail bow-tail-left"></div>
+                                <div class="bow-tail bow-tail-right"></div>
+                            </div>
+                        </div>
+
+                        <!-- Box Body -->
+                        <div class="box-body" id="boxBody">
+                            <div class="box-ribbon-vertical"></div>
+                            <div class="box-ribbon-horizontal"></div>
+                            <div class="box-pattern-overlay"></div>
+                            <div class="box-sparkle-glow"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Re-wrap option (visible when unwrapped) -->
+                <div class="rewrap-container" id="rewrapContainer" style="display: none;">
+                    <button class="btn-rewrap" id="btnRewrapBox">
+                        <span>🎀 Wrap Box Again</span>
+                    </button>
+                    <p class="cards-hint">Tip: Click on any card above to read the full message!</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal Dialog for Full File Card Reading -->
+    <div class="card-modal" id="cardModal" aria-hidden="true">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-card-dialog">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close card">✕</button>
+
+            <!-- Dedicated Music Bar for this File Card -->
+            <div class="modal-music-bar" id="modalMusicBar">
+                <div class="modal-music-info">
+                    <span class="music-icon-spin" id="modalMusicSpin">🎵</span>
+                    <div class="modal-equalizer active" id="modalEqualizer">
+                        <span class="m-bar m-bar-1"></span>
+                        <span class="m-bar m-bar-2"></span>
+                        <span class="m-bar m-bar-3"></span>
+                        <span class="m-bar m-bar-4"></span>
+                    </div>
+                    <span class="modal-music-name" id="modalMusicName">Playing Card Music 🎶</span>
+                </div>
+                <div class="modal-music-actions">
+                    <button class="modal-music-toggle-btn" id="modalMusicToggleBtn" title="Play / Pause song">⏸</button>
+                    <button class="modal-music-change-btn" id="modalMusicChangeBtn"
+                        title="Assign custom song for this file card">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M9 18V5l12-2v13"></path>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <circle cx="18" cy="16" r="3"></circle>
+                        </svg>
+                        <span>Assign Song</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal-card-body" id="modalCardBody">
+                <!-- Dynamically populated via script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- PAGE 3: NIGHT SKY & CELESTIAL CONSTELLATION-->
+    <!-- ========================================== -->
+    <main class="page-wrapper page-hidden page3-wrapper" id="page3Wrapper">
+        <div class="night-sky-card" id="nightSkyCard">
+
+            <!-- Deep Celestial Background Image with Moon -->
+            <div class="night-sky-bg" id="nightSkyBg"></div>
+            <div class="night-sky-overlay"></div>
+
+            <!-- Fireworks Canvas (2-second show) -->
+            <canvas id="fireworksCanvas"></canvas>
+
+            <!-- Navigation Header -->
+            <div class="page3-header">
+                <button class="btn-back btn-back-sky" id="btnBackToPage2" title="Return to Page 2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    <span>Back to Gifts</span>
+                </button>
+                <div class="celebration-pill sky-pill">
+                    <span class="sparkle-icon">🌙</span>
+                    <span class="pill-text">A Magical Night Under The Stars</span>
+                    <span class="sparkle-icon">✨</span>
+                </div>
+            </div>
+
+            <!-- Luminous Glowing Heading Area (Appears after 2s fireworks) -->
+            <div class="page3-heading-area" id="page3HeadingContainer">
+                <div class="sky-crown-badge">
+                    <span>👑 Dedication to Someone Special 👑</span>
+                </div>
+                <h1 class="glowing-mam-title" id="glowingMamTitle">
+                    Happy Birthday My Mam
+                </h1>
+                <p class="glowing-mam-subtitle">
+                    ✨ Shining brighter than every star across the midnight sky ✨
+                </p>
+            </div>
+
+            <!-- Constellation of 6 Clickable Stars -->
+            <div class="stars-constellation" id="starsConstellation">
+
+                <!-- Star 1 (Main Spotlight Star with user's popup) -->
+                <div class="celestial-star star-1 star-spotlight" id="star1" data-star="1" role="button" tabindex="0" title="Click Star #1">
+                    <div class="star-core"><span class="star-glyph">✦</span></div>
+                    <div class="star-halo"></div>
+                    <div class="star-ray r1"></div>
+                    <div class="star-ray r2"></div>
+                    <span class="star-label">Star 1</span>
+
+                    <!-- The User-Requested Popup Badge -->
+                    <div class="star-sweety-popup" id="starSweetyPopup">
+                        <div class="popup-pointer-arrow"></div>
+                        <span class="popup-sparkle">✨</span>
+                        <span class="popup-text">click the star , sweety</span>
+                        <span class="popup-sparkle">✨</span>
+                    </div>
+                </div>
+
+                <!-- Star 2 -->
+                <div class="celestial-star star-2" id="star2" data-star="2" role="button" tabindex="0" title="Click Star #2">
+                    <div class="star-core"><span class="star-glyph">✦</span></div>
+                    <div class="star-halo"></div>
+                    <div class="star-ray r1"></div>
+                    <div class="star-ray r2"></div>
+                    <span class="star-label">Star 2</span>
+                </div>
+
+                <!-- Star 3 -->
+                <div class="celestial-star star-3" id="star3" data-star="3" role="button" tabindex="0" title="Click Star #3">
+                    <div class="star-core"><span class="star-glyph">✦</span></div>
+                    <div class="star-halo"></div>
+                    <div class="star-ray r1"></div>
+                    <div class="star-ray r2"></div>
+                    <span class="star-label">Star 3</span>
+                </div>
+
+                <!-- Star 4 -->
+                <div class="celestial-star star-4" id="star4" data-star="4" role="button" tabindex="0" title="Click Star #4">
+                    <div class="star-core"><span class="star-glyph">✦</span></div>
+                    <div class="star-halo"></div>
+                    <div class="star-ray r1"></div>
+                    <div class="star-ray r2"></div>
+                    <span class="star-label">Star 4</span>
+                </div>
+
+                <!-- Star 5 -->
+                <div class="celestial-star star-5" id="star5" data-star="5" role="button" tabindex="0" title="Click Star #5">
+                    <div class="star-core"><span class="star-glyph">✦</span></div>
+                    <div class="star-halo"></div>
+                    <div class="star-ray r1"></div>
+                    <div class="star-ray r2"></div>
+                    <span class="star-label">Star 5</span>
+                </div>
+
+                <!-- Star 6 -->
+                <div class="celestial-star star-6" id="star6" data-star="6" role="button" tabindex="0" title="Click Star #6">
+                    <div class="star-core"><span class="star-glyph">✦</span></div>
+                    <div class="star-halo"></div>
+                    <div class="star-ray r1"></div>
+                    <div class="star-ray r2"></div>
+                    <span class="star-label">Star 6</span>
+                </div>
+
+            </div>
+
+            <!-- Page 3 Bottom Actions -->
+            <div class="page3-bottom-bar" id="page3BottomBar">
+                <button class="btn-replay-fireworks" id="btnReplayFireworks" title="Launch 2 seconds of fireworks again">
+                    <span class="fw-icon">🎆</span>
+                    <span>Replay Fireworks</span>
+                </button>
+                <button class="btn-return-home" id="btnReturnHome" title="Back to Page 1">
+                    <span>🏠 Back to Wishes</span>
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Celestial Photo Frame Modal (Opens on Star Click) -->
+    <div class="celestial-modal" id="celestialModal" aria-hidden="true">
+        <div class="celestial-backdrop" id="celestialBackdrop"></div>
+        <div class="celestial-dialog">
+            <button class="celestial-close-btn" id="celestialCloseBtn" aria-label="Close star frame">✕</button>
+
+            <!-- Star Badge -->
+            <div class="celestial-tag" id="celestialTag">
+                <span class="tag-star-icon">⭐</span>
+                <span id="celestialTagText">Star Memory #1</span>
+                <span class="tag-star-icon">⭐</span>
+            </div>
+
+            <!-- Royal Ornate Celestial Photo Frame -->
+            <div class="celestial-frame-showcase">
+                <div class="c-frame-outer-glow"></div>
+                <div class="c-royal-frame" id="cRoyalFrame">
+                    <div class="c-frame-corner c-top-left"></div>
+                    <div class="c-frame-corner c-top-right"></div>
+                    <div class="c-frame-corner c-bottom-left"></div>
+                    <div class="c-frame-corner c-bottom-right"></div>
+
+                    <div class="c-photo-container">
+                        <img id="celestialHerPhoto" src="assert/WhatsApp Image 2026-10-05 at 20.11.25 (2).jpeg" alt="Shafee's Starlight Photo" loading="eager">
+                        <div class="c-photo-shimmer"></div>
+
+                        <!-- Change Photo Button inside Celestial Frame -->
+                        <label for="cPhotoUploadInput" class="c-change-photo-badge" title="Click to use your own photo for this star">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                            <span>Change Photo</span>
+                        </label>
+                        <input type="file" id="cPhotoUploadInput" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Celestial Audio Player (Plays assigned audio per photo) -->
+            <div class="celestial-audio-bar" id="celestialAudioBar">
+                <audio id="celestialAudio" preload="auto"></audio>
+                <div class="c-audio-indicator" id="cAudioIndicator">
+                    <span class="c-audio-disc" id="cAudioDisc">💿</span>
+                    <div class="c-audio-equalizer" id="cAudioEqualizer">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+                <div class="c-audio-info">
+                    <span class="c-audio-label">Photo Melody</span>
+                    <span class="c-audio-title" id="cAudioTitle">Pesamale 🎵</span>
+                </div>
+                <div class="c-audio-controls">
+                    <button class="c-audio-btn c-btn-toggle" id="cAudioToggleBtn" title="Play / Pause Song">
+                        <span id="cAudioBtnIcon">⏸️</span>
+                    </button>
+                    <label for="cAudioUploadInput" class="c-audio-btn c-btn-change" title="Change song for this photo">
+                        <span>🎵 Change</span>
+                    </label>
+                    <input type="file" id="cAudioUploadInput" accept="audio/*" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Title & Slogan for this Star Memory -->
+            <h3 class="celestial-modal-title" id="celestialModalTitle">The Radiant Queen</h3>
+            <p class="celestial-modal-caption" id="celestialModalCaption">
+                “To my dearest Mam — a smile so bright, even the moon pauses to admire you.” 🌸
+            </p>
+
+            <!-- Star Switcher Navigation -->
+            <div class="celestial-switcher" id="celestialSwitcher">
+                <button class="c-switcher-btn active" data-switch-star="1">✦ Star 1</button>
+                <button class="c-switcher-btn" data-switch-star="2">✦ Star 2</button>
+                <button class="c-switcher-btn" data-switch-star="3">✦ Star 3</button>
+                <button class="c-switcher-btn" data-switch-star="4">✦ Star 4</button>
+                <button class="c-switcher-btn" data-switch-star="5">✦ Star 5</button>
+                <button class="c-switcher-btn" data-switch-star="6">✦ Star 6</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transition Overlay for Page Navigation -->
+    <div class="transition-curtain" id="transitionCurtain">
+        <div class="curtain-content">
+            <div class="curtain-heart">💖</div>
+            <h2 class="curtain-title">Opening Page 2...</h2>
+            <p class="curtain-subtitle">Your birthday surprise is waiting inside ✨</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js?v=8"></script>
+</body>
+
+</html>
