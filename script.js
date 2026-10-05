@@ -1026,7 +1026,7 @@ const starMemoriesData = {
         tag: 'Star Memory #4',
         title: 'Joyous Celebrations 🎉',
         image: 'assert/WhatsApp Image 2026-10-05 at 20.13.14.jpeg',
-        audio: 'assert/_Kamban_Solla_Vandhu_Kurumugil_Sita_Raman_Tamil_Ringtone_(by Fringster.com).mp3',
+        audio: 'assert/kurumugil.mp3',
         fallbackAudio: 'assert/tamil_flute_ringtone.mp3',
         songName: 'Kurumugil - Sita Ramam 🎵',
         caption: '“May every tomorrow be wrapped in sweet laughter, celestial light, and endless blessings.” 🎂'
@@ -1035,7 +1035,7 @@ const starMemoriesData = {
         tag: 'Star Memory #5',
         title: 'Timeless Royal Grace 👑',
         image: 'assert/WhatsApp Image 2026-10-05 at 20.13.15.jpeg',
-        audio: 'assert/_Vinnellaam_Mozhi_Minnum_Theethiriyaai_Brahmastra_Song_Tamil_Ringtone_(by Fringster.com).mp3',
+        audio: 'assert/theethiriyaai.mp3',
         fallbackAudio: 'assert/file1.mp3',
         songName: 'Theethiriyaai - Brahmāstra 🎵',
         caption: '“Dignity, kindness, and royal beauty that inspires everyone who knows you.” 🌟'
@@ -1044,7 +1044,7 @@ const starMemoriesData = {
         tag: 'Star Memory #6',
         title: 'Playful Moments 💫',
         image: 'assert/WhatsApp Image 2026-10-05 at 20.16.49.jpeg',
-        audio: 'assert/_Oththa_Seruppu_Kulirudha_Pulla_Telugu_Song_Ringtone_(by Fringster.com).mp3',
+        audio: 'assert/kulirudha_pulla.mp3',
         fallbackAudio: 'assert/file2.mp3',
         songName: 'Kulirudha Pulla - Oththa Seruppu 🎵',
         caption: '“Keep shining, keep smiling, and never stop being your wonderful self!” 💖'
